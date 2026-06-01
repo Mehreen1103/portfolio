@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mehrab Al Rahman | Digital Marketing & SEO Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060608;--bg2:#0e0e12;--bg3:#141418;
+  --border:rgba(255,255,255,0.07);
+  --accent:#7C3AED;--accent2:#A78BFA;--accent-glow:rgba(124,58,237,0.25);
+  --text:#F4F4F5;--muted:#71717A;--muted2:#A1A1AA;
+  --font:'Poppins',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:rgba(6,6,8,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.logo{font-weight:800;font-size:1.25rem;color:#fff;letter-spacing:-.5px;}
+.logo span{color:var(--accent2);}
+nav ul{display:flex;gap:28px;list-style:none;}
+nav a{text-decoration:none;color:var(--muted2);font-size:.85rem;font-weight:500;transition:.2s;}
+nav a:hover{color:#fff;}
+.nav-cta{padding:9px 22px;border-radius:50px;background:var(--accent);color:#fff!important;font-weight:600!important;font-size:.82rem!important;transition:.2s!important;}
+.nav-cta:hover{background:#6D28D9!important;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 6% 80px;gap:60px;position:relative;}
+.hero::before{content:'';position:absolute;top:10%;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.09) 0%,transparent 70%);pointer-events:none;}
+.hero-left{flex:1;max-width:660px;position:relative;z-index:1;}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:50px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);font-size:.72rem;letter-spacing:2px;color:var(--accent2);font-weight:600;margin-bottom:26px;text-transform:uppercase;}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:#10B981;flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5);}50%{box-shadow:0 0 0 5px transparent;}}
+.hero h1{font-size:clamp(2.6rem,5vw,4.8rem);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:8px;}
+.hero h1 em{font-style:normal;color:var(--accent2);}
+.typewriter-wrap{min-height:60px;display:block;margin-bottom:4px;}
+#typewriter{font-size:clamp(1.6rem,3vw,3rem);font-weight:700;color:var(--accent2);border-right:3px solid var(--accent2);padding-right:4px;animation:blink .8s step-end infinite;}
+@keyframes blink{50%{border-color:transparent;}}
+.hero-sub{margin-top:20px;color:var(--muted2);line-height:1.8;font-size:.98rem;max-width:540px;font-weight:400;}
+.hero-btns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+.btn-primary{padding:14px 28px;border-radius:50px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;transition:.25s;}
+.btn-primary:hover{background:#6D28D9;transform:translateY(-2px);box-shadow:0 12px 30px var(--accent-glow);}
+.btn-secondary{padding:14px 28px;border-radius:50px;border:1px solid var(--border);color:var(--muted2);text-decoration:none;font-weight:500;font-size:.9rem;transition:.25s;}
+.btn-secondary:hover{border-color:var(--accent2);color:#fff;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:44px;}
+.hstat{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px 14px;text-align:center;transition:.3s;}
+.hstat:hover{border-color:var(--accent);transform:translateY(-3px);}
+.hstat-num{font-size:1.5rem;font-weight:800;color:#fff;}
+.hstat-num span{color:var(--accent2);}
+.hstat-label{font-size:.68rem;color:var(--muted);margin-top:2px;letter-spacing:.3px;font-weight:500;}
+
+/* PHOTO */
+.hero-right{flex:0 0 360px;position:relative;z-index:1;}
+.photo-frame{width:360px;height:440px;border-radius:26px;background:var(--bg2);border:2px dashed rgba(124,58,237,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;transition:.3s;}
+.photo-frame:hover{border-color:var(--accent2);}
+.photo-instructions{display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px;text-align:center;}
+.photo-icon{width:54px;height:54px;border-radius:50%;background:rgba(124,58,237,.15);display:flex;align-items:center;justify-content:center;margin-bottom:6px;border:1px solid rgba(124,58,237,.25);}
+.photo-icon svg{width:24px;height:24px;stroke:var(--accent2);fill:none;stroke-width:1.5;}
+.photo-instructions strong{font-size:.9rem;color:var(--accent2);font-weight:700;}
+.photo-instructions p{font-size:.75rem;line-height:1.65;color:var(--muted2);}
+.photo-instructions code{display:block;margin-top:10px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.68rem;color:var(--muted2);font-family:monospace;text-align:left;word-break:break-all;}
+
+/* SECTIONS */
+section{padding:88px 6%;position:relative;}
+.section-label{font-size:.7rem;letter-spacing:3px;color:var(--accent2);text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+.section-title{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px;}
+.divider{width:44px;height:3px;background:var(--accent);border-radius:10px;margin-bottom:44px;}
+
+/* SERVICES */
+#services{background:var(--bg2);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;}
+.service-card{background:var(--bg3);border:1px solid var(--border);border-radius:18px;padding:28px;transition:.3s;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:.35s;}
+.service-card:hover{border-color:rgba(124,58,237,.4);transform:translateY(-4px);}
+.service-card:hover::before{transform:scaleX(1);}
+.service-num{font-size:2rem;font-weight:900;color:var(--accent2);line-height:1;margin-bottom:4px;letter-spacing:-1px;}
+.service-num-label{font-size:.68rem;color:var(--muted);font-weight:500;margin-bottom:18px;letter-spacing:.5px;text-transform:uppercase;}
+.service-card h3{font-size:1rem;font-weight:700;margin-bottom:9px;color:var(--text);}
+.service-card p{color:var(--muted2);font-size:.84rem;line-height:1.72;font-weight:400;}
+
+/* CASE STUDIES */
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px;}
+.case-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s;}
+.case-card:hover{border-color:rgba(124,58,237,.35);transform:translateY(-4px);}
+.case-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.case-number{font-size:.7rem;font-weight:700;color:var(--accent2);letter-spacing:2px;}
+.case-tag{padding:4px 10px;border-radius:50px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);font-size:.68rem;color:var(--accent2);font-weight:600;}
+.case-card h3{font-size:1.05rem;font-weight:700;margin-bottom:12px;}
+.case-results{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.result-pill{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.22);border-radius:10px;padding:8px 14px;text-align:center;}
+.result-pill .rnum{font-size:1.1rem;font-weight:800;color:#fff;line-height:1;white-space:nowrap;}
+.result-pill .rnum span{color:var(--accent2);}
+.result-pill .rlabel{font-size:.65rem;color:var(--muted2);font-weight:500;margin-top:2px;white-space:nowrap;}
+.case-card p{color:var(--muted2);font-size:.84rem;line-height:1.75;font-weight:400;}
+.case-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.ctag{padding:4px 11px;border-radius:50px;background:var(--bg3);border:1px solid var(--border);font-size:.7rem;color:var(--muted2);}
+
+/* SKILLS */
+#skills{background:var(--bg2);}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.skill-group h4{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.skill-item{margin-bottom:18px;}
+.skill-row{display:flex;justify-content:space-between;margin-bottom:6px;}
+.skill-name{font-size:.86rem;font-weight:500;}
+.skill-pct{font-size:.82rem;color:var(--muted);font-weight:600;}
+.skill-bar{height:4px;background:var(--bg3);border-radius:10px;overflow:hidden;}
+.skill-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;}
+.tool-chip{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:9px 10px;font-size:.74rem;color:var(--muted2);text-align:center;transition:.2s;font-weight:500;}
+.tool-chip:hover{border-color:var(--accent2);color:#fff;}
+
+/* EXPERIENCE */
+.exp-timeline{position:relative;padding-left:28px;}
+.exp-timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border);}
+.exp-item{position:relative;margin-bottom:38px;}
+.exp-item::before{content:'';position:absolute;left:-33px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 4px rgba(124,58,237,.2);}
+.exp-date{font-size:.72rem;color:var(--accent2);font-weight:600;letter-spacing:.5px;margin-bottom:5px;}
+.exp-title{font-size:1.05rem;font-weight:700;margin-bottom:2px;}
+.exp-company{font-size:.85rem;color:var(--muted2);margin-bottom:12px;font-weight:400;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.exp-bullets li{font-size:.84rem;color:var(--muted2);line-height:1.65;padding-left:16px;position:relative;font-weight:400;}
+.exp-bullets li::before{content:'--';position:absolute;left:0;color:var(--accent2);font-weight:700;}
+
+/* CERTIFICATIONS */
+#certs{background:var(--bg2);}
+.cert-single{display:flex;gap:28px;align-items:flex-start;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:28px;max-width:760px;transition:.3s;}
+.cert-single:hover{border-color:rgba(124,58,237,.4);}
+.cert-preview-wrap{flex-shrink:0;width:180px;}
+.cert-preview-wrap p{font-size:.68rem;color:var(--muted);text-align:center;margin-top:7px;}
+.cert-thumb{width:180px;height:128px;border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:pointer;position:relative;background:#fff;display:flex;align-items:center;justify-content:center;transition:.25s;}
+.cert-thumb:hover{border-color:var(--accent2);box-shadow:0 6px 24px var(--accent-glow);}
+.cert-thumb:hover .zoom-hint{opacity:1;}
+.zoom-hint{position:absolute;inset:0;background:rgba(124,58,237,.6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:600;opacity:0;transition:.2s;border-radius:10px;letter-spacing:.5px;}
+.cert-info{flex:1;}
+.cert-badge-row{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:50px;background:rgba(255,105,0,.1);border:1px solid rgba(255,105,0,.3);font-size:.7rem;color:#FF6900;font-weight:700;margin-bottom:14px;letter-spacing:.3px;}
+.cert-info h3{font-size:1.1rem;font-weight:800;margin-bottom:6px;}
+.cert-issuer{font-size:.82rem;color:var(--muted2);margin-bottom:14px;}
+.cert-skills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+.cert-skill-tag{padding:5px 12px;border-radius:50px;background:var(--bg2);border:1px solid var(--border);font-size:.73rem;color:var(--muted2);}
+.cert-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:999;align-items:center;justify-content:center;padding:20px;}
+.cert-modal.open{display:flex;}
+.cert-modal-inner{background:var(--bg2);border-radius:16px;padding:20px;max-width:700px;width:100%;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+.cert-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted2);line-height:1;font-family:var(--font);}
+.cert-modal-close:hover{color:#fff;}
+
+/* EDUCATION */
+#education{background:var(--bg2);}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;}
+.edu-card{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:22px;transition:.3s;}
+.edu-card:hover{border-color:rgba(124,58,237,.3);}
+.edu-level{font-size:.68rem;color:var(--accent2);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:7px;}
+.edu-card h4{font-size:.95rem;font-weight:700;margin-bottom:5px;}
+.edu-card p{font-size:.78rem;color:var(--muted2);line-height:1.6;font-weight:400;}
+.edu-gpa{margin-top:10px;font-size:1rem;font-weight:800;color:#fff;}
+
+/* CONTACT */
+#contact{text-align:center;}
+.contact-box{max-width:620px;margin:0 auto;background:var(--bg2);border:1px solid var(--border);border-radius:26px;padding:46px 38px;}
+.contact-methods{display:flex;flex-direction:column;gap:12px;margin:28px 0;}
+.contact-row{display:flex;align-items:center;gap:14px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-align:left;text-decoration:none;color:var(--text);transition:.2s;}
+.contact-row:hover{border-color:var(--accent2);}
+.contact-row-icon{width:36px;height:36px;border-radius:9px;background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-row-icon svg{width:16px;height:16px;stroke:var(--accent2);fill:none;stroke-width:1.8;}
+.contact-row-label{font-size:.68rem;color:var(--muted);font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.contact-row-val{font-size:.88rem;font-weight:500;margin-top:1px;}
+.fiverr-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;background:linear-gradient(135deg,#1DBF73,#19A463);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;transition:.25s;}
+.fiverr-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(29,191,115,.3);}
+.fiverr-dot{width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0;}
+
+footer{text-align:center;padding:28px;border-top:1px solid var(--border);color:var(--muted);font-size:.78rem;}
+
+@media(max-width:900px){
+  .hero{flex-direction:column;padding-top:110px;gap:40px;}
+  .hero-right{width:100%;display:flex;justify-content:center;}
+  .photo-frame{width:280px;height:340px;}
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+  nav ul{display:none;}
+  .skills-layout{grid-template-columns:1fr;}
+  .cases-grid{grid-template-columns:1fr;}
+  .cert-single{flex-direction:column;}
+}
+@media(max-width:480px){
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .hero h1{font-size:2.2rem;}
+  .contact-box{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Mehrab<span>.</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Case Studies</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="badge"><span class="badge-dot"></span> Available for Freelance Work</div>
+    <h1>I Help Businesses<br>Grow with <em>Digital Marketing</em></h1>
+    <span class="typewriter-wrap"><span id="typewriter"></span></span>
+    <p class="hero-sub">SEO · Google Business Profile · Link Building · Meta Ads · Technical SEO. 2+ years delivering measurable growth for businesses across multiple industries and markets — locally and internationally.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://www.fiverr.com/mehrabr" target="_blank">Hire Me on Fiverr</a>
+      <a class="btn-secondary" href="#work">View Case Studies</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">6<span>+</span></div><div class="hstat-label">Projects Done</div></div>
+      <div class="hstat"><div class="hstat-num">1K<span>+</span></div><div class="hstat-label">Backlinks Built</div></div>
+      <div class="hstat"><div class="hstat-num">2<span>+</span></div><div class="hstat-label">Years Experience</div></div>
+      <div class="hstat"><div class="hstat-num">3<span>+</span></div><div class="hstat-label">US Clients Served</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!--
+    HOW TO ADD YOUR PHOTO:
+    1. Save your photo (e.g. photo.jpg) in the same folder as this file.
+    2. Delete the <div class="photo-instructions"> block below.
+    3. Add: <img src="photo.jpg" alt="Mehrab Al Rahman"
+                  style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
+    -->
+    <div class="photo-frame">
+      
+        
+        
+        <img src="pictures/photo.jpg" alt="Mehrab Al Rahman" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
+      
+    
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What I Do</div>
+  <div class="section-title">Core Services</div>
+  <div class="divider"></div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-num">90<span style="color:var(--accent2);font-size:1.2rem">%</span></div>
+      <div class="service-num-label">Proficiency Level</div>
+      <h3>Google Business Profile SEO</h3>
+      <p>Full GBP optimization — category setup, keyword-rich descriptions, photo strategy, review management, and local citation building to rank in the Map Pack.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">88<span style="color:var(--accent2);font-size:1.2rem">%</span></div>
+      <div class="service-num-label">Proficiency Level</div>
+      <h3>Local SEO</h3>
+      <p>Location-targeted SEO strategy — city-specific keyword targeting, NAP consistency, directory submissions, and multi-location campaign management.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">1K<span style="color:var(--accent2);font-size:1.2rem">+</span></div>
+      <div class="service-num-label">Backlinks Delivered</div>
+      <h3>Link Building</h3>
+      <p>White-hat backlink campaigns — manual outreach, Web 2.0, niche edits, guest posting, profile links, and foundation link building to grow domain authority.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">4<span style="color:var(--accent2);font-size:1.2rem">+</span></div>
+      <div class="service-num-label">Issues Fixed Per Audit</div>
+      <h3>Technical SEO Audit</h3>
+      <p>Full site audits covering canonical tags, redirect chains, 404 errors, crawlability issues, Core Web Vitals, and toxic backlink disavowal.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">75<span style="color:var(--accent2);font-size:1.2rem">%</span></div>
+      <div class="service-num-label">Proficiency Level</div>
+      <h3>Meta Ads Management</h3>
+      <p>Facebook and Instagram ad campaign planning, audience targeting, performance monitoring, and ROI optimization — focused on lead generation and conversions.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">6<span style="color:var(--accent2);font-size:1.2rem">+</span></div>
+      <div class="service-num-label">Clients Reported For</div>
+      <h3>SEO Reporting & Strategy</h3>
+      <p>Keyword tracking, competitor analysis, backlink monitoring, and monthly performance reports with data-driven recommendations for ongoing growth.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Real Projects, Real Results</div>
+  <div class="divider"></div>
+  <div class="cases-grid">
+
+    <div class="case-card">
+      <div class="case-top">
+        <span class="case-number">PROJECT 01</span>
+        <span class="case-tag">Off-Page SEO</span>
+      </div>
+      <h3>Foundation Link Building Campaign</h3>
+      <div class="case-results">
+        <div class="result-pill"><div class="rnum">1,000<span>+</span></div><div class="rlabel">Backlinks Built</div></div>
+        <div class="result-pill"><div class="rnum">3</div><div class="rlabel">SEO Areas Fixed</div></div>
+      </div>
+      <p>Executed a full off-page SEO strategy including a site audit, technical SEO fixes, and a 1,000+ backlink foundation campaign — building domain authority and improving organic rankings from scratch.</p>
+      <div class="case-tags">
+        <span class="ctag">1,000+ Backlinks</span><span class="ctag">SEO Audit</span><span class="ctag">Technical SEO</span><span class="ctag">Off-Page SEO</span>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-top">
+        <span class="case-number">PROJECT 02</span>
+        <span class="case-tag">Technical SEO</span>
+      </div>
+      <h3>Full Technical SEO Recovery</h3>
+      <div class="case-results">
+        <div class="result-pill"><div class="rnum">4</div><div class="rlabel">Critical Issues Fixed</div></div>
+        <div class="result-pill"><div class="rnum">100<span>%</span></div><div class="rlabel">Site Health Restored</div></div>
+      </div>
+      <p>Resolved critical technical SEO problems — canonical tag conflicts, broken 301 redirect chains, 404 errors, and toxic backlink disavowal. Fully restored crawlability and site indexation health.</p>
+      <div class="case-tags">
+        <span class="ctag">Canonical Tags</span><span class="ctag">301 Redirects</span><span class="ctag">404 Fix</span><span class="ctag">Disavow File</span><span class="ctag">Site Audit</span>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-top">
+        <span class="case-number">PROJECT 03</span>
+        <span class="case-tag">International · Fiverr</span>
+      </div>
+      <h3>Web 2.0 Backlink Campaign — Ukraine</h3>
+      <div class="case-results">
+        <div class="result-pill"><div class="rnum">Web 2.0</div><div class="rlabel">Links Delivered</div></div>
+        <div class="result-pill"><div class="rnum">Intl</div><div class="rlabel">Client Market</div></div>
+      </div>
+      <p>Delivered a contextual Web 2.0 backlink campaign for an international client via Fiverr. Created niche-relevant web 2.0 properties to strengthen domain authority and support organic ranking goals.</p>
+      <div class="case-tags">
+        <span class="ctag">Web 2.0 Links</span><span class="ctag">Fiverr</span><span class="ctag">International</span><span class="ctag">Domain Authority</span>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-top">
+        <span class="case-number">PROJECT 04</span>
+        <span class="case-tag">Local SEO · US Client</span>
+      </div>
+      <h3>MimUSA — Local Citations & GBP Authority</h3>
+      <div class="case-results">
+        <div class="result-pill"><div class="rnum">50<span>+</span></div><div class="rlabel">Citations Built</div></div>
+        <div class="result-pill"><div class="rnum">GBP</div><div class="rlabel">Authority Boosted</div></div>
+      </div>
+      <p>Built a structured local SEO foundation for MimUSA — profile backlinks, local citation submissions, and directory listings. Strengthened NAP consistency and boosted GBP authority for better Map Pack visibility.</p>
+      <div class="case-tags">
+        <span class="ctag">Local Citations</span><span class="ctag">Profile Backlinks</span><span class="ctag">Directory Submission</span><span class="ctag">GBP SEO</span>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-top">
+        <span class="case-number">PROJECT 05</span>
+        <span class="case-tag">Multi-Location · US Client</span>
+      </div>
+      <h3>SF Partners — Denver & Pittsburgh Local SEO</h3>
+      <div class="case-results">
+        <div class="result-pill"><div class="rnum">2</div><div class="rlabel">US City Locations</div></div>
+        <div class="result-pill"><div class="rnum">2x</div><div class="rlabel">GBP Listings Optimized</div></div>
+      </div>
+      <p>Managed local SEO across two US cities for SF Partners. Built location-specific keyword strategies, optimized each GBP listing independently, and ran city-targeted citation campaigns for Denver and Pittsburgh.</p>
+      <div class="case-tags">
+        <span class="ctag">Multi-Location SEO</span><span class="ctag">Denver</span><span class="ctag">Pittsburgh</span><span class="ctag">GBP Optimization</span><span class="ctag">Local Rankings</span>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-top">
+        <span class="case-number">PROJECT 06</span>
+        <span class="case-tag">Local SEO · Commercial</span>
+      </div>
+      <h3>OfficeLeasingInc — Local SEO Campaign</h3>
+      <div class="case-results">
+        <div class="result-pill"><div class="rnum">Local</div><div class="rlabel">Search Presence</div></div>
+        <div class="result-pill"><div class="rnum">B2B</div><div class="rlabel">Commercial Niche</div></div>
+      </div>
+      <p>Executed a local SEO campaign for OfficeLeasingInc targeting commercial real estate search terms. Improved local search visibility and business directory presence in the office leasing niche.</p>
+      <div class="case-tags">
+        <span class="ctag">Local SEO</span><span class="ctag">Commercial Real Estate</span><span class="ctag">Directory Listings</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <div class="section-title">Skills & Tools</div>
+  <div class="divider"></div>
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group">
+        <h4>SEO & Search</h4>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Local SEO / GBP Optimization</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Link Building & Outreach</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Technical SEO Audits</span><span class="skill-pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Keyword Research</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">On-Page SEO</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+      <div class="skill-group" style="margin-top:34px;">
+        <h4>Marketing & Ads</h4>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Meta Ads (Facebook / Instagram)</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Content Strategy</span><span class="skill-pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Cold Outreach (Email / WhatsApp)</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group">
+        <h4>Tools I Use</h4>
+        <div class="tools-grid">
+          <div class="tool-chip">Google Search Console</div>
+          <div class="tool-chip">Semrush</div>
+          <div class="tool-chip">Ahrefs</div>
+          <div class="tool-chip">Google Analytics</div>
+          <div class="tool-chip">Screaming Frog</div>
+          <div class="tool-chip">Moz</div>
+          <div class="tool-chip">BrightLocal</div>
+          <div class="tool-chip">Meta Ads Manager</div>
+          <div class="tool-chip">Google Business Profile</div>
+          <div class="tool-chip">WordPress</div>
+          <div class="tool-chip">Canva</div>
+          <!-- <div class="tool-chip">Apollo.io</div> -->
+        </div>
+      </div>
+      <div class="skill-group" style="margin-top:34px;">
+        <h4>Specializations</h4>
+        <div class="tools-grid">
+          <div class="tool-chip">GBP Reinstatement</div>
+          <div class="tool-chip">Map Pack Ranking</div>
+          <div class="tool-chip">Multi-Location SEO</div>
+          <div class="tool-chip">Citation Building</div>
+          <div class="tool-chip">Disavow Files</div>
+          <div class="tool-chip">White-Hat Links</div>
+          <div class="tool-chip">NAP Consistency</div>
+          <div class="tool-chip">Redirect Audits</div>
+          <div class="tool-chip">404 Recovery</div>
+          <div class="tool-chip">AI Search (AEO)</div>
+          <div class="tool-chip">GEO Strategy</div>
+          <div class="tool-chip">Semantic SEO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Work History</div>
+  <div class="section-title">Professional Experience</div>
+  <div class="divider"></div>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">JAN 2025 — FEB 2026</div>
+      <div class="exp-title">Link Building & Digital Marketing Specialist</div>
+      <div class="exp-company">Artisan Excursion · Remote</div>
+      <ul class="exp-bullets">
+        <li>Developed and executed link-building campaigns to improve domain authority and organic search rankings</li>
+        <li>Planned and managed Meta advertising campaigns, monitoring performance metrics to optimize ROI and lead generation</li>
+        <li>Conducted competitor analysis and market research to identify growth opportunities</li>
+        <li>Tracked and reported on backlink performance, keyword rankings, and traffic data for continuous SEO improvement</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">FEB 2024 — JUL 2024</div>
+      <div class="exp-title">Digital Marketing Specialist</div>
+      <div class="exp-company">Boostup Expert · Remote</div>
+      <ul class="exp-bullets">
+        <li>Built quality white-hat backlinks through manual outreach, guest posting, niche edits, and Web 2.0 submissions</li>
+        <li>Collaborated with content teams to create high-value assets optimized for conversion and SEO</li>
+        <li>Optimized anchor text profiles and internal linking strategies to support overall SEO objectives</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2023 — PRESENT</div>
+      <div class="exp-title">Freelance SEO Specialist</div>
+      <div class="exp-company">Fiverr (mehrabr) · Remote</div>
+      <ul class="exp-bullets">
+        <li>Delivered Local SEO, GBP optimization, link building, and technical SEO to clients across the US and internationally</li>
+        <li>Managed multi-location SEO for SF Partners across Denver and Pittsburgh</li>
+        <li>Completed 6+ projects with measurable organic growth outcomes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-label">Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="divider"></div>
+
+  <div class="cert-single">
+    <div class="cert-preview-wrap">
+      <div class="cert-thumb" onclick="document.getElementById('certModal').classList.add('open')" title="Click to view certificate">
+        <iframe src="mehrab-al-rahman_37.pdf"
+                style="width:350%;height:350%;transform:scale(0.286);transform-origin:top left;border:none;pointer-events:none;">
+        </iframe>
+        <div class="zoom-hint">View Certificate</div>
+      </div>
+      <p>Click to view full certificate</p>
+    </div>
+
+    <div class="cert-info">
+      <div class="cert-badge-row">Semrush Academy</div>
+      <h3>AI Search Operating System</h3>
+      <div class="cert-issuer">Issued by Semrush Academy · Awarded to Mehrab Al Rahman</div>
+      <p style="font-size:.84rem;color:var(--muted2);line-height:1.72;">Certified for the successful completion of the AI Search Operating System course — covering how AI is reshaping search, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), and semantic search strategies for modern SEO.</p>
+      <div class="cert-skills">
+        <span class="cert-skill-tag">AI Search</span>
+        <span class="cert-skill-tag">AEO</span>
+        <span class="cert-skill-tag">GEO</span>
+        <span class="cert-skill-tag">Semantic SEO</span>
+        <span class="cert-skill-tag">Generative AI & SEO</span>
+        <span class="cert-skill-tag">Search Strategy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificate Modal -->
+<div class="cert-modal" id="certModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="cert-modal-inner">
+    <button class="cert-modal-close" onclick="document.getElementById('certModal').classList.remove('open')">x</button>
+    <iframe src="mehrab-al-rahman_37.pdf" style="width:100%;height:520px;border:none;border-radius:8px;"></iframe>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Academic Background</div>
+  <div class="section-title">Education</div>
+  <div class="divider"></div>
+  <div class="edu-grid">
+    <div class="edu-card"><div class="edu-level">MBA</div><h4>Accounting</h4><p>Rangamati Government College<br>National University · 2021</p><div class="edu-gpa">2.72 / 4.00</div></div>
+    <div class="edu-card"><div class="edu-level">BBA</div><h4>Accounting</h4><p>Rangamati Government College<br>National University · 2020</p><div class="edu-gpa">2.96 / 4.00</div></div>
+    <div class="edu-card"><div class="edu-level">HSC</div><h4>Business Studies</h4><p>Rangamati Government College · 2016</p><div class="edu-gpa">3.33 / 5.00</div></div>
+    <div class="edu-card"><div class="edu-level">SSC</div><h4>Business Studies</h4><p>Lakers Public School & College · 2014</p><div class="edu-gpa">4.25 / 5.00</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <div class="section-title">Let's Work Together</div>
+  <div class="divider" style="margin:0 auto 44px;"></div>
+  <div class="contact-box">
+    <p style="color:var(--muted2);line-height:1.75;font-size:.9rem;">Available for freelance projects, long-term collaborations, and one-off campaigns. Reach out through any of the channels below.</p>
+    <div class="contact-methods">
+      <a class="contact-row" href="mailto:rahmanmehrabb777@gmail.com">
+        <div class="contact-row-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </div>
+        <div><div class="contact-row-label">Email</div><div class="contact-row-val">rahmanmehrabb777@gmail.com</div></div>
+      </a>
+      <a class="contact-row" href="https://wa.me/8801749757775" target="_blank">
+        <div class="contact-row-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <div><div class="contact-row-label">WhatsApp</div><div class="contact-row-val">+880 1749757775</div></div>
+      </a>
+      <div class="contact-row">
+        <div class="contact-row-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div><div class="contact-row-label">Location</div><div class="contact-row-val">Bangladesh · Available for Remote Work Worldwide</div></div>
+      </div>
+    </div>
+    <a class="fiverr-btn" href="https://www.fiverr.com/mehrab_rahman/buying?source=avatar_menu_profile" target="_blank">
+      <span class="fiverr-dot"></span> View My Fiverr Profile
+    </a>
+  </div>
+</section>
+
+<footer>© 2026 Mehrab Al Rahman · Digital Marketing & SEO Specialist · Bangladesh</footer>
+
+<script>
+const words=["Local SEO","GBP Optimization","Link Building","Meta Ads","Technical SEO"];
+const el=document.getElementById("typewriter");
+let wi=0,ci=0,del=false;
+function type(){
+  const w=words[wi];
+  el.textContent=w.substring(0,ci);
+  if(!del){ci++;if(ci>w.length){del=true;setTimeout(type,1400);return;}}
+  else{ci--;if(ci<0){del=false;wi=(wi+1)%words.length;ci=0;}}
+  setTimeout(type,del?45:95);
+}
+type();
+</script>
+</body>
+</html>
